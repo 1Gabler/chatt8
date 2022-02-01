@@ -61,6 +61,10 @@ async def refresh_msg(nickname, msg_box):
             chat_msgs = chat_msgs[len(chat_msgs) // 2:]
         
         last_idx = len(chat_msgs)
+        
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-p", "--port", type=int, default=8080)
+    args = parser.parse_args()
 
-if __name__ == "__main__":
-    start_server(main, port=80)
+    start_server(predict, port=args.port)
